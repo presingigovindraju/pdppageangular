@@ -1,0 +1,91 @@
+<section class="fifthSection">
+
+
+  <!-- ==========================================
+       TITLE
+  =========================================== -->
+
+  <h2 class="accessoriesTitle">
+    Accessories
+  </h2>
+
+
+  <!-- ==========================================
+       ACCESSORIES GRID
+  =========================================== -->
+
+  <div class="accessoriesGrid">
+
+
+    <div
+      class="accessoryCard"
+      *ngFor="let item of visibleAccessories"
+    >
+
+
+      <!-- IMAGE -->
+
+      <img
+        [src]="item.image"
+        [alt]="item.name"
+      >
+
+
+      <!-- DETAILS -->
+
+      <div class="accessoryDetails">
+
+
+        <h3>
+          {{ item.name }}
+        </h3>
+
+
+        <p>
+          Item # {{ item.itemNumber }}
+        </p>
+
+
+        <h4>
+          {{ item.price }}
+        </h4>
+
+
+        <button
+          class="addToCartBtn"
+          (click)="addToCart(item)"
+        >
+
+          Add to Cart
+
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ==========================================
+       SEE ALL
+  =========================================== -->
+
+  <div
+    class="seeAllWrapper"
+    *ngIf="showSeeAll"
+    (click)="showMore()"
+  >
+
+    <p class="seeAllBtn">
+      See All
+    </p>
+
+    <i class="fa-solid fa-angle-down"></i>
+
+  </div>
+
+
+</section>

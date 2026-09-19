@@ -1,0 +1,857 @@
+* {
+  box-sizing: border-box;
+}
+
+#secondSection {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breadcrumbPath {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.breadcrumbPath p,
+.breadcrumbPath span {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.breadcrumbText {
+  display: block;
+}
+
+.menuIcon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.arrowSizing {
+  font-size: x-large;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+/* ==========================================
+   PRODUCT LAYOUT
+========================================== */
+
+.productLayoutTotalBlock {
+  display: flex;
+  width: 95%;
+  gap: 30px;
+  padding: 35px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 45px;
+}
+
+.productLayout {
+  display: flex;
+  flex: 1.8;
+  gap: 20px;
+}
+
+.leftImages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sideThumbnails {
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.thumbnailsView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  max-height: 260px;
+}
+
+.thumbnailImage {
+  height: 55px;
+  width: 60px;
+  object-fit: contain;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.2s ease;
+}
+
+.thumbnailImage.activeThumbnail {
+  border-color: #1a365d;
+}
+
+.mainProductImg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin-left: 20px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+#mainProductImage {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+#mainProductImage:hover {
+  transform: scale(1.1);
+}
+
+.zoomText {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.productDetailsPurchaseBoxTotally {
+  display: flex;
+  flex: 2;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.productDetails {
+  min-width: 0;
+  flex: 1;
+}
+
+.purchaseBoxTotallyFull {
+  flex: 0.1;
+  min-width: 240px;
+}
+
+#purchaseBoxTotally {
+  display: flex;
+  flex-direction: column;
+}
+
+.productDetailsOneSection,
+.productDetailsTwoSection {
+  border-bottom: 2px solid #ccc;
+}
+
+.productDetailsTwoSection {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.productDetailsOneSection h2 {
+  font-size: 26px;
+  color: #2b2b2b;
+  font-weight: 600;
+  width: 88%;
+}
+
+.productCode {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  width: 85%;
+}
+
+.productCode p {
+  margin: 6px 0;
+}
+
+.productCodeLove {
+  cursor: pointer;
+}
+
+.lovedOne {
+  margin-right: 8px;
+}
+
+.productPrice {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(1, 42, 88);
+  margin-bottom: 15px;
+}
+
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.optionGroup {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.optionGroup label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.colorRow,
+.seatRow,
+.armStyleGroup,
+.riggingRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.colorRow label,
+.seatRow label,
+.armStyleGroup label,
+.riggingRow label {
+  white-space: nowrap;
+  margin-top: 6px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.colorDots,
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.colorDots {
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dot.red {
+  background-color: red;
+}
+
+.dot.blue {
+  background-color: blue;
+}
+
+.dot.black {
+  background-color: black;
+}
+
+.dot.green {
+  background-color: green;
+}
+
+.dot.white {
+  background-color: white;
+  border: 2px solid #ccc;
+}
+
+.dot.active {
+  border-color: #333;
+  box-shadow: 0 0 0 2px skyblue;
+}
+
+/* ==========================================
+   SEAT SIZE
+========================================== */
+
+.buttonGroup.sizegap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.buttonGroup.sizegap button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f0f0f0;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.buttonGroup.sizegap button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* ==========================================
+   ARM STYLE / FRONT RIGGING
+========================================== */
+
+.buttonGroup.styleGap,
+.buttonGroup.riggingGap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+.styleButton,
+.riggingButton {
+  width: 120px;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  height: auto;
+
+  font-size: 13px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f0f0f0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 8px;
+
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  text-align: center;
+  line-height: 1.3;
+
+  flex: 0 1 120px;
+}
+
+.styleButton.left-align,
+.riggingButton.left-align {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.styleButton.active,
+.riggingButton.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* ==========================================
+   SEE ALL / ABOUT
+========================================== */
+
+.seeAllAchorTag {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 10px;
+  cursor: pointer;
+  color: rgb(34, 34, 144);
+}
+
+.productDetailsThreeSection {
+  padding-top: 5px;
+}
+
+.productDetailsThreeSection h3 {
+  font-size: 20px;
+  color: #1e3a60;
+  padding-bottom: 10px;
+}
+
+.productDetailsThreeSection p {
+  font-size: 15px;
+  color: #555;
+}
+
+#seeMoreButton {
+  border: none;
+  background-color: transparent;
+  width: 85px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(34, 34, 144);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.seeMoreText {
+  text-decoration: underline;
+}
+
+.arrowTextDocaretionRemove {
+  color: black;
+}
+
+/* ==========================================
+   PURCHASE BOX
+========================================== */
+
+.productBuyBox {
+  margin-top: 20px;
+}
+
+.purchaseBox {
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  gap: 12px;
+}
+
+.purchasePrice {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(1, 42, 88);
+}
+
+.quantitySelects {
+  width: 98%;
+  padding: 10px;
+  gap: 14px;
+}
+
+.optionSelect {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionSelectFirstones {
+  margin-bottom: 10px;
+}
+
+.quantitySelects select {
+  padding: 8px 22px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  min-width: 85px;
+}
+
+.deliveryTextDeliveryTo {
+  font-size: 16px;
+}
+
+.deliveryText {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.numberSpacing {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.inStockText {
+  color: green;
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.addToCartBtn,
+.buyNowBtn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.addToCartBtn {
+  background-color: #6ab3e6;
+  color: #1e3651;
+}
+
+.buyNowBtn {
+  margin-top: 10px;
+  background-color: #3ea9f5;
+  color: #1a385c;
+}
+
+.replacementPartBox {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgb(233, 229, 229);
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.replacementTitle {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #554f4f;
+}
+
+.partsFinder {
+  color: #646060;
+}
+
+.replacementPartBox a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   RESPONSIVE - 1024px
+========================================== */
+
+@media (max-width: 1024px) {
+
+  .productLayoutTotalBlock {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding-left: 8px;
+  }
+
+  .productLayout {
+    align-items: center;
+    width: 100%;
+  }
+
+  .mainProductImg {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .productDetailsPurchaseBoxTotally {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .purchaseBoxTotallyFull,
+  .productDetails {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - 768px
+========================================== */
+
+@media (max-width: 768px) {
+
+  .breadcrumbPath {
+    padding: 5px 20px;
+  }
+
+  .sideThumbnails {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .optionGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .arrowSizing {
+    display: none;
+  }
+
+  .addToCartBtn,
+  .buyNowBtn {
+    font-size: 16px;
+  }
+
+  .colorRow,
+  .seatRow,
+  .armStyleGroup,
+  .riggingRow {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ========================================
+     ARM STYLE / FRONT RIGGING
+     Keep buttons side-by-side and wrap
+  ======================================== */
+
+  .armStyleGroup,
+  .riggingRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .armStyleGroup label,
+  .riggingRow label {
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .buttonGroup.styleGap,
+  .buttonGroup.riggingGap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .styleButton,
+  .riggingButton {
+    flex: 0 1 120px;
+    width: 120px;
+    max-width: 100%;
+    min-width: 0;
+
+    height: auto;
+    min-height: 34px;
+
+    padding: 7px 10px;
+
+    font-size: 13px;
+
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    line-height: 1.3;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - 600px
+========================================== */
+
+@media (max-width: 600px) {
+
+  .breadcrumbText {
+    display: block;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+
+  /*
+    Keep the previous overall gap from
+    the left and right edges.
+  */
+  .productLayoutTotalBlock {
+    width: 95%;
+    padding-left: 8px;
+    padding-right: 0;
+  }
+
+  .productDetails {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .productDetailsPurchaseBoxTotally {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .optionGroup {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .armStyleGroup,
+  .riggingRow {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .buttonGroup.styleGap,
+  .buttonGroup.riggingGap {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .styleButton,
+  .riggingButton {
+    flex: 0 1 120px;
+    width: 120px;
+    max-width: 100%;
+    min-width: 0;
+
+    height: auto;
+    min-height: 34px;
+
+    padding: 7px 8px;
+
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    line-height: 1.3;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - 480px
+========================================== */
+
+@media (max-width: 480px) {
+
+  .productDetailsOneSection h2 {
+    font-size: 20px;
+  }
+
+  .productPrice,
+  .purchasePrice {
+    font-size: 18px;
+  }
+
+  .productDetailsThreeSection p,
+  .productDetailsThreeSection h3 {
+    font-size: 14px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .addToCartBtn,
+  .buyNowBtn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /*
+    Keep previous overall section spacing.
+  */
+  .productLayoutTotalBlock {
+    width: 95%;
+    padding-left: 8px;
+    padding-right: 0;
+  }
+
+  .productDetails {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .productDetailsPurchaseBoxTotally {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .optionGroup {
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 20px;
+  }
+
+  /* ======================================
+     ARM STYLE / FRONT RIGGING
+  ====================================== */
+
+  .armStyleGroup,
+  .riggingRow {
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .armStyleGroup label,
+  .riggingRow label {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .buttonGroup.styleGap,
+  .buttonGroup.riggingGap {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+
+    gap: 8px;
+  }
+
+  .styleButton,
+  .riggingButton {
+    flex: 0 1 120px;
+    width: 120px;
+    max-width: 100%;
+    min-width: 0;
+
+    height: auto;
+    min-height: 34px;
+
+    padding: 7px 8px;
+
+    font-size: 13px;
+
+    white-space: normal;
+    overflow: visible;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    line-height: 1.3;
+  }
+}

@@ -1,0 +1,318 @@
+<section
+  class="thirdSection"
+  id="SeeAllProductOptions">
+
+
+  <!-- ==========================================
+       TAB HEADER
+  =========================================== -->
+
+  <div class="tabHeader">
+
+    <button
+      *ngFor="let tab of tabs; let i = index"
+      [class.active]="activeTab === i"
+      (click)="selectTab(i)"
+    >
+
+      {{ tab }}
+
+    </button>
+
+  </div>
+
+
+  <!-- ==========================================
+       PRODUCT OPTIONS TAB
+  =========================================== -->
+
+  <div
+    class="productOptionsTab"
+    *ngIf="activeTab === 0"
+  >
+
+    <div class="tableWrapper">
+
+      <table class="productOptionsTable">
+
+        <thead>
+
+          <tr>
+
+            <th>Item #</th>
+
+            <th>UPC</th>
+
+            <th>Seat Size</th>
+
+            <th>Front Rigging</th>
+
+            <th>HCPCS</th>
+
+            <th>Price</th>
+
+            <th>Quantity</th>
+
+            <th>Unit</th>
+
+            <th>Select</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr
+            *ngFor="let product of productOptions"
+          >
+
+            <td data-label="Item #">
+              {{ product.itemNumber }}
+            </td>
+
+            <td data-label="UPC">
+              {{ product.upc }}
+            </td>
+
+            <td data-label="Seat Size">
+              {{ product.seatSize }}
+            </td>
+
+            <td data-label="Front Rigging">
+              {{ product.frontRigging }}
+            </td>
+
+            <td data-label="HCPCS">
+              {{ product.hcpcs }}
+            </td>
+
+            <td data-label="Price">
+              {{ product.price }}
+            </td>
+
+            <td data-label="Quantity">
+
+              <input
+                type="number"
+                value="1"
+                min="1"
+              >
+
+            </td>
+
+            <td data-label="Unit">
+
+              <select>
+
+                <option>
+                  1/EACH
+                </option>
+
+              </select>
+
+            </td>
+
+            <td data-label="Select">
+
+              <button class="addToCartBtns">
+
+                Add to Cart
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       FEATURES TAB
+  =========================================== -->
+
+  <div
+    class="featuresSection"
+    *ngIf="activeTab === 1"
+  >
+
+    <div class="featuresSectionCenterWrapper">
+
+      <ul class="featureList">
+
+        <li *ngFor="let feature of featuresOne">
+
+          {{ feature }}
+
+        </li>
+
+      </ul>
+
+
+      <ul class="featureList">
+
+        <li *ngFor="let feature of featuresTwo">
+
+          {{ feature }}
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       SPECIFICATIONS TAB
+  =========================================== -->
+
+  <div
+    class="specTables"
+    *ngIf="activeTab === 2"
+  >
+
+    <div class="specTablesCenterWrapper">
+
+
+      <!-- FIRST TABLE -->
+
+      <table class="specTable">
+
+        <tbody>
+
+          <tr
+            *ngFor="let spec of specificationsOne"
+          >
+
+            <th>
+              {{ spec.name }}
+            </th>
+
+            <td>
+              {{ spec.value }}
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+
+      <!-- SECOND TABLE -->
+
+      <table class="specTable">
+
+        <tbody>
+
+          <tr
+            *ngFor="let spec of specificationsTwo"
+          >
+
+            <th>
+              {{ spec.name }}
+            </th>
+
+            <td>
+              {{ spec.value }}
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       RESOURCES / DOWNLOADS
+  =========================================== -->
+
+  <div
+    class="SpecificationsDownLoadOne"
+    *ngIf="activeTab === 3"
+  >
+
+    <div class="SpecificationsDownLoadOneCenterWrapper">
+
+
+      <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        <p>
+          User Manual
+        </p>
+
+        <button
+          type="button"
+          (click)="downloadFile('User Manual')"
+        >
+
+          Download
+
+        </button>
+
+      </div>
+
+
+      <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+
+        <i class="fa-solid fa-gear"></i>
+
+        <p>
+          Parts Diagram
+        </p>
+
+        <button
+          type="button"
+          (click)="downloadFile('Parts Diagram')"
+        >
+
+          Download
+
+        </button>
+
+      </div>
+
+
+      <div class="SpecificationsDownLoadOneCenterWrapperElementsParent">
+
+        <i class="fa-regular fa-file-lines"></i>
+
+        <p>
+          Catalog Page
+        </p>
+
+        <button
+          type="button"
+          (click)="downloadFile('Catalog Page')"
+        >
+
+          Download
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>

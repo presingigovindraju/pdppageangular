@@ -1,0 +1,138 @@
+.fifthSection {
+  padding: 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.accessoriesTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: end;
+  width: 84%;
+  opacity: 0.8;
+}
+
+.accessoriesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.4rem;
+  width: 100%;
+}
+
+.accessoryCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.accessoryCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accessoryCard img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.accessoryDetails {
+  padding: 1rem;
+  text-align: left;
+}
+
+.accessoryDetails h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.accessoryDetails p {
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.accessoryDetails h4 {
+  color: #0d0d0d;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.addToCartBtn {
+  width: 100%;
+  border: none;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #6ab3e6;
+  color: #1e3651;
+}
+
+.seeAllWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 85px;
+  cursor: pointer;
+}
+
+.seeAllBtn {
+  font-weight: bold;
+  color: #263447;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .accessoryCard {
+    width: 220px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .fifthSection {
+    width: 95%;
+  }
+
+  .accessoryCard {
+    width: calc(50% - 15px);
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .accessoriesTitle {
+    width: 100%;
+  }
+
+  .accessoryCard {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}

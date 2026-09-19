@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Wheelchair illustration 1">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d9ecff"/>
+      <stop offset="100%" stop-color="#a2c6ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="#f3f6fb"/>
+  <g transform="translate(20,30)">
+    <circle cx="120" cy="320" r="52" fill="#4a4f56"/>
+    <circle cx="440" cy="320" r="52" fill="#4a4f56"/>
+    <circle cx="120" cy="320" r="26" fill="#d9dde3"/>
+    <circle cx="440" cy="320" r="26" fill="#d9dde3"/>
+    <rect x="150" y="150" width="260" height="120" rx="18" fill="url(#g1)" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="190" y="70" width="170" height="110" rx="14" fill="#ceddf4" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="198" y="82" width="154" height="26" rx="8" fill="#9abce8"/>
+    <rect x="268" y="170" width="48" height="150" fill="#b8cfe9" stroke="#3d4c66" stroke-width="4"/>
+    <path d="M170 150 L120 240 L106 240 L154 150 Z" fill="#b6cbe9" stroke="#3d4c66" stroke-width="4"/>
+    <path d="M410 150 L480 240 L494 240 L446 150 Z" fill="#b6cbe9" stroke="#3d4c66" stroke-width="4"/>
+    <path d="M140 240 L160 300 L95 300 L110 240 Z" fill="#d7e6f5" stroke="#3d4c66" stroke-width="4"/>
+    <path d="M400 240 L486 300 L540 300 L520 240 Z" fill="#d7e6f5" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="294" y="318" width="52" height="48" fill="#8aaad8" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="196" y="318" width="52" height="48" fill="#8aaad8" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="170" y="210" width="24" height="80" rx="12" fill="#dfeaf8" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="370" y="210" width="24" height="80" rx="12" fill="#dfeaf8" stroke="#3d4c66" stroke-width="4"/>
+    <rect x="178" y="86" width="30" height="22" fill="#fdfdfd" opacity="0.7"/>
+  </g>
+</svg>

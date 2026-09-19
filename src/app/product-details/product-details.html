@@ -1,0 +1,544 @@
+<section id="secondSection">
+
+  <!-- ==========================================
+       BREADCRUMB
+  =========================================== -->
+
+  <div class="breadcrumbPath">
+
+    <p class="breadcrumbText">
+
+      Home /
+      Products /
+      Mobility /
+      Wheelchairs /
+      Standard Wheelchairs /
+      <span>Silver Sport 1 Wheelchair</span>
+
+    </p>
+
+    <div class="menuIcon">
+
+      <i class="fa fa-bars"></i>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       PRODUCT MAIN AREA
+  =========================================== -->
+
+  <div class="productLayoutTotalBlock">
+
+
+    <!-- ========================================
+         PRODUCT IMAGE AREA
+    ========================================= -->
+
+    <div class="productLayout">
+
+
+      <!-- THUMBNAILS -->
+
+      <div class="leftImages">
+
+        <div class="sideThumbnails">
+
+
+          <!-- UP ARROW -->
+
+          <i
+            class="arrowSizing fa-solid fa-angle-up"
+            (click)="previousImage()">
+          </i>
+
+
+          <!-- THUMBNAILS -->
+
+          <div class="thumbnailsView">
+
+            <img
+              *ngFor="let image of images; let i = index"
+              [src]="image.src"
+              [alt]="image.alt"
+              class="thumbnailImage"
+              [class.activeThumbnail]="selectedImageIndex === i"
+              (click)="updateMainImage(i)"
+            >
+
+          </div>
+
+
+          <!-- DOWN ARROW -->
+
+          <i
+            class="arrowSizing fa-solid fa-angle-down"
+            (click)="nextImage()">
+          </i>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- MAIN IMAGE -->
+
+      <div class="mainProductImg">
+
+        <img
+          id="mainProductImage"
+          [src]="images[selectedImageIndex].src"
+          [alt]="images[selectedImageIndex].alt"
+        >
+
+        <p class="zoomText">
+          Roll over image to zoom in
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- ========================================
+         PRODUCT DETAILS + PURCHASE
+    ========================================= -->
+
+    <div class="productDetailsPurchaseBoxTotally">
+
+
+      <!-- ======================================
+           PRODUCT DETAILS
+      ======================================= -->
+
+      <div class="productDetails">
+
+
+        <!-- PRODUCT TITLE / CODE / PRICE -->
+
+        <div class="productDetailsOneSection">
+
+          <h2>
+            {{ productTitle }}
+          </h2>
+
+
+          <div class="productCode">
+
+
+            <div>
+
+              <p>
+                Item # {{ itemNumber }}
+              </p>
+
+
+              <p class="productCodeLove">
+
+                <i class="lovedOne fa-regular fa-heart"></i>
+
+                Save to Favorites
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <p>
+                UPC # {{ upcNumber }}
+              </p>
+
+              <p>
+                HCPCS # {{ hcpcsNumber }}
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+          <p class="productPrice">
+            {{ productPrice }}
+          </p>
+
+        </div>
+
+
+        <!-- ======================================
+             PRODUCT OPTIONS
+        ======================================= -->
+
+        <div class="productDetailsTwoSection">
+
+
+          <!-- COLOR -->
+
+          <div class="optionGroup">
+
+            <div class="colorRow">
+
+              <label>
+                Color
+              </label>
+
+
+              <div class="colorDots">
+
+                <span
+                  *ngFor="let color of colors"
+                  class="dot"
+                  [ngClass]="color.className"
+                  [class.active]="selectedColor === color.name"
+                  (click)="selectColor(color.name)">
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SEAT SIZE -->
+
+          <div class="optionGroup">
+
+            <div class="seatRow">
+
+              <label>
+                Seat Size
+              </label>
+
+
+              <div class="buttonGroup sizegap">
+
+                <button
+                  *ngFor="let size of seatSizes"
+                  [class.active]="selectedSeatSize === size"
+                  (click)="selectSeatSize(size)"
+                >
+
+                  {{ size }}
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ARM STYLE -->
+
+          <div class="optionGroup armStyleGroup">
+
+            <label>
+              Arm Style
+            </label>
+
+
+            <div class="buttonGroup styleGap">
+
+              <button
+                *ngFor="let style of armStyles"
+                class="styleButton"
+                [class.active]="selectedArmStyle === style"
+                [class.left-align]="style.length > 12"
+                [title]="style"
+                (click)="selectArmStyle(style)"
+              >
+
+                {{ style.length > 12
+                  ? (style | slice:0:12) + '...'
+                  : style
+                }}
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- FRONT RIGGING -->
+
+          <div class="optionGroup">
+
+            <div class="riggingRow">
+
+              <label>
+                Front Rigging
+              </label>
+
+
+              <div class="buttonGroup riggingGap">
+
+                <button
+                  *ngFor="let option of riggingOptions"
+                  class="riggingButton"
+                  [class.active]="selectedRigging === option"
+                  [class.left-align]="option.length > 12"
+                  [title]="option"
+                  (click)="selectRigging(option)"
+                >
+
+                  {{ option.length > 12
+                    ? (option | slice:0:12) + '...'
+                    : option
+                  }}
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SEE ALL PRODUCT OPTIONS -->
+
+          <div
+            class="seeAllAchorTag"
+            (click)="scrollToProductOptions()"
+          >
+
+            See All Product Options
+
+            <i class="fa-solid fa-angle-right"></i>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- ======================================
+             ABOUT THIS ITEM
+        ======================================= -->
+
+        <div class="productDetailsThreeSection">
+
+          <h3>
+            About This Item
+          </h3>
+
+
+          <p>
+
+            If you are seeking an easy, transportable mobility option,
+            then look no further than Drive Medical’s Silver Sport
+            Transport Wheelchair.
+
+            <span *ngIf="!showMore">
+              The durable steel frame with an attractive silver vein
+              finish and durable vinyl upholstery
+            </span>
+
+
+            <span *ngIf="!showMore">
+              ...
+            </span>
+
+
+            <span *ngIf="showMore">
+
+              The durable steel frame with an attractive silver vein
+              finish and durable vinyl upholstery.
+
+              It also features padded armrests and swing-away
+              footrests for enhanced comfort.
+
+              With its lightweight design and easy-folding feature,
+              it’s perfect for travel and storage.
+
+            </span>
+
+          </p>
+
+
+          <button
+            id="seeMoreButton"
+            (click)="toggleMore()"
+          >
+
+            <span class="seeMoreText">
+
+              {{ showMore ? 'See Less' : 'See More' }}
+
+            </span>
+
+
+            <i
+              class="arrowTextDocaretionRemove fa-solid"
+              [class.fa-angle-right]="!showMore"
+              [class.fa-angle-up]="showMore">
+            </i>
+
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- ======================================
+           PURCHASE BOX
+      ======================================= -->
+
+      <div class="purchaseBoxTotallyFull">
+
+        <div id="purchaseBoxTotally">
+
+
+          <div class="purchaseBox">
+
+
+            <p class="purchasePrice">
+              {{ productPrice }}
+            </p>
+
+
+            <!-- QUANTITY -->
+
+            <div class="quantitySelects">
+
+              <div class="optionSelect optionSelectFirstones">
+
+                <label>
+                  Quantity
+                </label>
+
+                <select>
+
+                  <option>1</option>
+                  <option>2</option>
+
+                </select>
+
+              </div>
+
+
+              <!-- UOM -->
+
+              <div class="optionSelect">
+
+                <label>
+                  UOM
+                </label>
+
+                <select>
+
+                  <option>
+                    4/cs
+                  </option>
+
+                  <option>
+                    2/cs
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+
+            <p class="deliveryText">
+
+              <span class="deliveryTextDeliveryTo">
+
+                Deliver to
+                <strong>Chris - Huntington</strong>
+
+              </span>
+
+              <span class="numberSpacing">
+                11743
+              </span>
+
+              <br>
+
+              Last Order Date:
+              <strong>11/10/24</strong>
+
+              <br>
+
+              <span class="inStockText">
+                In Stock
+              </span>
+
+            </p>
+
+
+            <!-- ADD TO CART -->
+
+            <button class="addToCartBtn">
+
+              Add to Cart
+
+            </button>
+
+
+            <!-- BUY NOW -->
+
+            <button class="buyNowBtn">
+
+              Buy Now
+
+            </button>
+
+
+          </div>
+
+
+          <!-- REPLACEMENT PARTS -->
+
+          <div class="replacementPartBox">
+
+            <p class="replacementTitle">
+
+              <i class="fa-solid fa-gear"></i>
+
+              Looking for Replacement Parts?
+
+            </p>
+
+
+            <p class="partsFinder">
+
+              To find replacement parts or accessories for this product,
+              visit the
+
+              <a href="#">
+                Parts Finder
+              </a>
+
+              page.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>

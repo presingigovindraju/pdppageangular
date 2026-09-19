@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Wheelchair illustration 4">
+  <rect width="640" height="480" fill="#fdf3f3"/>
+  <g transform="translate(24,24)">
+    <circle cx="112" cy="332" r="56" fill="#4f4b4a"/>
+    <circle cx="432" cy="332" r="56" fill="#4f4b4a"/>
+    <circle cx="112" cy="332" r="27" fill="#d8d1cf"/>
+    <circle cx="432" cy="332" r="27" fill="#d8d1cf"/>
+    <rect x="162" y="152" width="258" height="124" rx="18" fill="#ffb1b1" stroke="#7f2a2a" stroke-width="4"/>
+    <rect x="190" y="80" width="176" height="102" rx="16" fill="#ffd0d0" stroke="#7f2a2a" stroke-width="4"/>
+    <path d="M168 152 L110 252 L92 252 L150 152 Z" fill="#f7b9b9" stroke="#7f2a2a" stroke-width="4"/>
+    <path d="M416 152 L514 252 L530 252 L468 152 Z" fill="#f7b9b9" stroke="#7f2a2a" stroke-width="4"/>
+    <path d="M172 252 L132 306 L90 306 L104 252 Z" fill="#ffdede" stroke="#7f2a2a" stroke-width="4"/>
+    <path d="M420 252 L514 306 L560 306 L540 252 Z" fill="#ffdede" stroke="#7f2a2a" stroke-width="4"/>
+    <rect x="268" y="170" width="52" height="178" fill="#ffe6e6" stroke="#7f2a2a" stroke-width="4"/>
+    <rect x="208" y="326" width="54" height="54" rx="8" fill="#eb8a8a" stroke="#7f2a2a" stroke-width="4"/>
+    <rect x="356" y="326" width="54" height="54" rx="8" fill="#eb8a8a" stroke="#7f2a2a" stroke-width="4"/>
+    <rect x="206" y="92" width="28" height="24" fill="#fff7f7" opacity="0.8"/>
+  </g>
+</svg>
