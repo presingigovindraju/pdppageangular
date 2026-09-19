@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './footer.css'
 })
 export class FooterComponent implements OnInit {
+  private readonly isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) platformId: object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   // Login URL
   loginURL = 'https://shop.drivemedical.com/us/en/login';
@@ -30,6 +36,9 @@ export class FooterComponent implements OnInit {
    * Get cookie value
    */
   getCookie(cookieName: string): string | null {
+    if (!this.isBrowser || typeof document === 'undefined') {
+      return null;
+    }
 
     const cookies = document.cookie.split(';');
 
@@ -54,6 +63,9 @@ export class FooterComponent implements OnInit {
    * Validate Cancellations & Returns URL
    */
   validateURL(event: Event): void {
+    if (!this.isBrowser || typeof window === 'undefined') {
+      return;
+    }
 
     // Prevent the normal link navigation
     event.preventDefault();
@@ -135,6 +147,9 @@ export class FooterComponent implements OnInit {
    * Handle redirect after successful login
    */
   handlePostLoginRedirection(): void {
+    if (!this.isBrowser || typeof window === 'undefined' || typeof sessionStorage === 'undefined') {
+      return;
+    }
 
     // Check whether user is logged in
     const isValidated =
