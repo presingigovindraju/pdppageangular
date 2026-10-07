@@ -1,3 +1,4 @@
+
 .thirdSection {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -6,6 +7,7 @@
   width: 100%;
   box-sizing: border-box;
 }
+
 
 /* ==========================================
    TAB HEADER
@@ -38,8 +40,9 @@
   border-top-right-radius: 10px;
 }
 
+
 /* ==========================================
-   TABLE
+   PRODUCT OPTIONS TABLE
 ========================================== */
 
 .tableWrapper {
@@ -50,6 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .productOptionsTable {
@@ -100,8 +104,10 @@
   font-size: 12.5px;
 }
 
+
 /* ==========================================
    FEATURES
+   YOUR ORIGINAL STYLE - NOT CHANGED
 ========================================== */
 
 .featuresSection {
@@ -135,8 +141,10 @@
   color: #333;
 }
 
+
 /* ==========================================
    SPECIFICATIONS
+   YOUR ORIGINAL STYLE - NOT CHANGED
 ========================================== */
 
 .specTables {
@@ -189,8 +197,10 @@
   border-bottom: 1px solid white;
 }
 
+
 /* ==========================================
    DOWNLOADS
+   YOUR ORIGINAL STYLE - NOT CHANGED
 ========================================== */
 
 .SpecificationsDownLoadOne {
@@ -250,8 +260,9 @@
   background-color: #1899e1;
 }
 
+
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE - 1024px
 ========================================== */
 
 @media (max-width: 1024px) {
@@ -265,85 +276,169 @@
     padding: 0.5rem;
     font-size: 0.9rem;
   }
-
 }
+
+
+/* ==========================================
+   MOBILE - 768px
+   ONLY PRODUCT OPTIONS IS CHANGED
+========================================== */
 
 @media (max-width: 768px) {
 
-  .featuresSection {
-    flex-direction: column;
-    gap: 20px;
-  }
+  /* ------------------------------------------
+     PRODUCT OPTIONS
+  ------------------------------------------ */
 
-  .featureList {
-    padding: 0 30px;
-  }
-
-  .SpecificationsDownLoadOne {
-    gap: 30px;
-    padding: 30px 10px;
-  }
-
-  .SpecificationsDownLoadOne i {
-    font-size: 34px;
-  }
-
-  .SpecificationsDownLoadOne p {
-    font-size: 15px;
-  }
-
-  .SpecificationsDownLoadOne button {
-    padding: 8px 18px;
-    font-size: 14px;
+  .tableWrapper {
+    width: 100%;
+    padding: 15px 10px;
+    display: block;
+    overflow-x: visible;
+    box-sizing: border-box;
   }
 
   .productOptionsTable {
     width: 100%;
     border: none;
+    border-collapse: separate;
+    border-spacing: 0;
   }
 
+  /* Hide desktop table header */
   .productOptionsTable thead {
     display: none;
   }
 
+  .productOptionsTable tbody {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+  }
+
+  /* Each product becomes a card */
   .productOptionsTable tbody tr {
-    display: flex;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+    margin-bottom: 15px;
+    padding: 15px;
+
     border: 1px solid #ddd;
     border-radius: 8px;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   }
 
-  .productOptionsTable td {
+  /* Each field */
+  .productOptionsTable tbody td {
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
+
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: none;
-    font-size: 0.9rem;
+
+    padding: 9px 0;
+
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+
+    text-align: right;
+
+    min-width: 0;
   }
 
-  .productOptionsTable td::before {
+  /* Field labels */
+  .productOptionsTable tbody td::before {
     content: attr(data-label);
+
     font-weight: bold;
     color: #444;
-    flex-basis: 40%;
+
+    flex: 0 0 42%;
+
     text-align: left;
   }
 
-  .productOptionsTable input,
+  /* Values */
+  .productOptionsTable tbody td {
+    overflow-wrap: anywhere;
+  }
+
+  /* Last field */
+  .productOptionsTable tbody td:last-child {
+    border-bottom: none;
+  }
+
+  /* Quantity */
+  .productOptionsTable input[type="number"] {
+    width: 70px;
+    height: 36px;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Unit */
   .productOptionsTable select {
-    max-width: 120px;
+    width: 120px;
+    height: 36px;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background-color: white;
+  }
+
+  /* Select / Add to Cart */
+  .productOptionsTable td[data-label="Select"] {
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 14px;
+    padding-bottom: 2px;
+
+    border-bottom: none;
+  }
+
+  .productOptionsTable td[data-label="Select"]::before {
+    display: none;
   }
 
   .addToCartBtns {
-    width: fit-content;
+    width: auto;
     margin-left: auto;
-  }
 
+    padding: 9px 18px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+  }
 }
+
+
+/* ==========================================
+   SMALL MOBILE - 480px
+   ONLY PRODUCT OPTIONS + TAB SIZE
+========================================== */
 
 @media (max-width: 480px) {
 
@@ -351,10 +446,39 @@
     font-size: 14px;
   }
 
-  .specTable th,
-  .specTable td {
-    font-size: 14px;
-    padding: 8px 10px;
+  /* Product options only */
+
+  .tableWrapper {
+    padding: 10px 8px;
   }
 
+  .productOptionsTable tbody tr {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .productOptionsTable tbody td {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .productOptionsTable tbody td::before {
+    flex: 0 0 45%;
+    font-size: 13px;
+  }
+
+  .productOptionsTable input[type="number"] {
+    width: 65px;
+    height: 34px;
+  }
+
+  .productOptionsTable select {
+    width: 110px;
+    height: 34px;
+  }
+
+  .addToCartBtns {
+    padding: 8px 15px;
+    font-size: 12.5px;
+  }
 }
